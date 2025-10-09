@@ -1,0 +1,19 @@
+name: redesign-aging-dev
+channels:
+- conda-forge
+dependencies:
+- python>3.11, <3.14
+- numpy
+- ipython
+- ipykernel
+- setuptools
+- pandas>=1.2.5
+- matplotlib
+- black>=24.1.1
+- pytest
+- pip
+- pip:
+  - ogcore==0.14.8
+  - taxcalc==5.2.0
+  - ogusa==0.3.0
+  - plotly-express
