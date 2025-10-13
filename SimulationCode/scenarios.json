@@ -1,0 +1,312 @@
+{
+    "scenario_params": {
+        "Brain aging, alternative": {
+            "directory": "brain_health_alternative",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.1,
+            "prod_effect": 0.6,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Brain aging": {
+            "directory": "brain",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.1,
+            "prod_effect": 0.35,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Brain aging, 100%": {
+            "directory": "brain_100pct",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.2,
+            "prod_effect": 0.7,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Reproductive aging": {
+            "directory": "reproductive_1yr",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.01,
+            "prod_effect": 0.02,
+            "fert_effect": 0.5,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Replacing aging, 4x organs": {
+            "directory": "organs_4x",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.44,
+            "prod_effect": 0.0,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Replacing aging, 4x organs (new)": {
+            "directory": "organs_4x_new",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.44,
+            "prod_effect": 0.0,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Replacing aging, 2x organs": {
+            "directory": "organs_2x",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.22,
+            "prod_effect": 0.0,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "1st Gen": {
+            "directory": "1st_gen",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.09,
+            "prod_effect": 0.08,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 65,
+            "initial_effect_period": 5,
+            "final_effect_period": 10
+        },
+        "1st Gen 18.5pct": {
+            "directory": "1st_gen_18pt5pct",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.15,
+            "prod_effect": 0.13,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 65,
+            "initial_effect_period": 5,
+            "final_effect_period": 10
+        },
+        "2nd Gen": {
+            "directory": "2nd_gen",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.41,
+            "prod_effect": 0.72,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "2nd Gen + OOC": {
+            "directory": "2nd_gen_ooc",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.41,
+            "prod_effect": 0.72,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 8,
+            "final_effect_period": 16
+        },
+        "41 the new 40, mortality only": {
+            "directory": "one_year_mort",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.5,
+            "prod_effect": 0.0,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "41 the new 40, productivity only": {
+            "directory": "one_year_prod",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.0,
+            "prod_effect": 0.5,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "41 the new 40, fertility only": {
+            "directory": "one_year_fert",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.0,
+            "prod_effect": 0.0,
+            "fert_effect": 0.5,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "41 the new 40": {
+            "directory": "one_year_all",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.5,
+            "prod_effect": 0.5,
+            "fert_effect": 0.5,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "45 the new 40, mortality only": {
+            "directory": "five_year_mort",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 2.5,
+            "prod_effect": 0.0,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "45 the new 40, productivity only": {
+            "directory": "five_year_prod",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.0,
+            "prod_effect": 2.5,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "45 the new 40, fertility only": {
+            "directory": "five_year_fert",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.0,
+            "prod_effect": 0.0,
+            "fert_effect": 0.6,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "45 the new 40": {
+            "directory": "five_year_all",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 2.5,
+            "prod_effect": 2.5,
+            "fert_effect": 0.6,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Exercise": {
+            "directory": "excercise",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 2.52,
+            "prod_effect": 0.0,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "41 new 40, 100% adhere": {
+            "directory": "one_year_100pct",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 1.0,
+            "prod_effect": 1.0,
+            "fert_effect": 0.5,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Appendix, 1% mortality": {
+            "directory": "one_percent_mortality",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.13,
+            "prod_effect": 0.0,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Appendix, 1% productivity": {
+            "directory": "one_percent_productivity",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.0,
+            "prod_effect": 0.47,
+            "fert_effect": 0.0,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Appendix, 1% fertility": {
+            "directory": "one_percent_fertility",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.0,
+            "prod_effect": 0.0,
+            "fert_effect": 0.54,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Appendix, 1% all": {
+            "directory": "one_percent_all",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.13,
+            "prod_effect": 0.47,
+            "fert_effect": 0.54,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Appendix, 1 Year All, 65+": {
+            "directory": "one_year_65plus",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 0.5,
+            "prod_effect": 0.5,
+            "fert_effect": 0.5,
+            "min_age_effect_felt": 65,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Appendix, 5 Year, 100pct": {
+            "directory": "five_year_100pct",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 5.0,
+            "prod_effect": 5.0,
+            "fert_effect": 0.6,
+            "min_age_effect_felt": 40,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        },
+        "Appendix, 5 Year, 65plus": {
+            "directory": "five_year_65plus",
+            "rd_invest": 0.0,
+            "num_years_invest": 10,
+            "mort_effect": 2.5,
+            "prod_effect": 2.5,
+            "fert_effect": 0.6,
+            "min_age_effect_felt": 65,
+            "initial_effect_period": 10,
+            "final_effect_period": 20
+        }
+    }
+}
