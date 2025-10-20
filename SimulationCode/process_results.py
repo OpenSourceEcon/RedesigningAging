@@ -119,7 +119,8 @@ def main(directory_name, json_filename, OUTPUT_FILENAME):
         params = safe_read_pickle(os.path.join(file_path, "model_params.pkl"))
 
         # Compute differences in the  population
-        end_year = 2100 - 1
+        # end_year = 2100 - 1
+        end_year = 2126
         base_pop_full_path, _ = get_pop(
             E=20,
             S=80,
@@ -240,6 +241,7 @@ def main(directory_name, json_filename, OUTPUT_FILENAME):
 
             # create 1+r series
             r_series = np.array([1 + r] * len(value_of_life_years))
+            r_series[0] = 1  # first year
             # Create a NPV of changes over NUM_YEARS_MACRO_NPV years
             PV_value_of_life_years = (
                 value_of_life_years / np.cumprod(r_series)
