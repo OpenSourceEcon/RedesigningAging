@@ -3,13 +3,12 @@
 import numpy as np
 import pickle
 import multiprocessing
-import requests
+import importlib.resources
 from distributed import Client
 import os
 import json
 import time
 import argparse
-from ogusa.calibrate import Calibration
 from ogcore.parameters import Specifications
 from ogcore.execute import runner
 from ogcore.utils import safe_read_pickle, shift_bio_clock
@@ -46,10 +45,10 @@ def main(simulation_json):
     """
     Read in OG-USA default parameters
     """
-    resp = requests.get(
-        "https://raw.githubusercontent.com/PSLmodels/OG-USA/master/ogusa/ogusa_default_parameters.json"
-    )
-    ogusa_default_params = json.loads(resp.text)
+    with importlib.resources.open_text(
+        "ogusa", "ogusa_default_parameters.json"
+    ) as file:
+        ogusa_default_params = json.load(file)
 
     # update some of these defaults that will be used in all simulations
     ogusa_default_params["tax_func_type"] = "HSV"
