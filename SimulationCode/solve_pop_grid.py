@@ -174,19 +174,42 @@ parameter_grid = {
     "mort_effect": [0, 0.2, 0.5, 1, 2.5, 5, 7, 9, 10],
     "fert_effect": [0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.35, 0.4, 0.6],
 }
+total_number_of_sims = (
+    len(parameter_grid["age_effect"])
+    * len(parameter_grid["initial_effect"])
+    * len(parameter_grid["final_effect"])
+    * len(parameter_grid["mort_effect"])
+    * len(parameter_grid["fert_effect"])
+)
+print(f"Total number of simulations to run: {total_number_of_sims}")
 
 # Now loop over parameter grid and find population distribution at each point
+i = 1
 for min_age_effect_felt in parameter_grid["age_effect"]:
     for initial_effect_period in parameter_grid["initial_effect"]:
-        for final_effect_period in parameter_grid["final_effect"]:
+        for final_effect in parameter_grid["final_effect"]:
             for mort_effect in parameter_grid["mort_effect"]:
                 for fert_effect in parameter_grid["fert_effect"]:
+
+                    # if both mort_effect and fert_effect are zero, skip
+                    if mort_effect == 0 and fert_effect == 0:
+                        continue
+
+                    print(f"Running simulation {i} of {total_number_of_sims}")
+                    print(
+                        f"Parameters: min_age_effect_felt={min_age_effect_felt}, "
+                        f"initial_effect_period={initial_effect_period}, "
+                        f"final_effect_period={final_effect}, "
+                        f"mort_effect={mort_effect}, "
+                        f"fert_effect={fert_effect}"
+                    )
+                    i += 1
                     # Store parameter values
                     results_dict["age_effect"].append(min_age_effect_felt)
                     results_dict["initial_effect"].append(
                         initial_effect_period
                     )
-                    results_dict["final_effect"].append(final_effect_period)
+                    results_dict["final_effect"].append(final_effect)
                     results_dict["mort_effect"].append(mort_effect)
                     results_dict["fert_effect"].append(fert_effect)
                     # Create parameter object
@@ -199,6 +222,10 @@ for min_age_effect_felt in parameter_grid["age_effect"]:
                     # update to baseline demographics
                     # important for shift of rho below
                     p.update_specifications(demog_vars)
+
+                    # create final effect period that is the sum of
+                    # initial_effect and final_effect
+                    final_effect_period = initial_effect_period + final_effect
 
                     # Updates to mortality rates and fertility rates
                     mort_rates_shift = shift_bio_clock(
