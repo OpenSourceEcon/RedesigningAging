@@ -168,11 +168,11 @@ results_dict = {
 
 # Create grid of parameters to loop over
 parameter_grid = {
-    "age_effect": [40, 50, 60, 70, 80],
-    "initial_effect": [0, 5, 10, 15],
-    "final_effect": [0, 5, 10, 15],
-    "mort_effect": [0, 0.2, 0.5, 1, 2.5, 5, 7, 9, 10],
-    "fert_effect": [0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.35, 0.4, 0.6],
+    "age_effect": [40, 50, 60, 70],
+    "initial_effect": [0, 5, 10, 15, 20],
+    "final_effect": [0, 5, 10, 15, 20],
+    "mort_effect": [0, 0.001, 0.05, 0.2, 0.5, 1, 2.5, 5],
+    "fert_effect": [0, 0.001, 0.01, 0.05, 0.1, 0.15, 0.2, 0.3, 0.35, 0.4, 0.6],
 }
 total_number_of_sims = (
     len(parameter_grid["age_effect"])
