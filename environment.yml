@@ -1,4 +1,4 @@
-name: redesign-aging-dev
+name: redesign-aging-env
 channels:
 - conda-forge
 dependencies:

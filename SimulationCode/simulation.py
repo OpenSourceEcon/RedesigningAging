@@ -3,13 +3,12 @@
 import numpy as np
 import pickle
 import multiprocessing
-import requests
+import importlib.resources
 from distributed import Client
 import os
 import json
 import time
 import argparse
-from ogusa.calibrate import Calibration
 from ogcore.parameters import Specifications
 from ogcore.execute import runner
 from ogcore.utils import safe_read_pickle, shift_bio_clock
@@ -30,9 +29,7 @@ def main(simulation_json):
 
     # Directories to save data
     cur_dir = os.path.dirname(os.path.realpath(__file__))
-    sim_dir = os.path.join(
-        cur_dir, "simulation_results"
-    )
+    sim_dir = os.path.join(cur_dir, "simulation_results")
     base_dir = os.path.join(sim_dir, "baseline")
     # set paths for each simulation
     scenario_directories = {}
@@ -48,10 +45,10 @@ def main(simulation_json):
     """
     Read in OG-USA default parameters
     """
-    resp = requests.get(
-        "https://raw.githubusercontent.com/PSLmodels/OG-USA/master/ogusa/ogusa_default_parameters.json"
-    )
-    ogusa_default_params = json.loads(resp.text)
+    with importlib.resources.open_text(
+        "ogusa", "ogusa_default_parameters.json"
+    ) as file:
+        ogusa_default_params = json.load(file)
 
     # update some of these defaults that will be used in all simulations
     ogusa_default_params["tax_func_type"] = "HSV"
@@ -298,6 +295,33 @@ def main(simulation_json):
             download_path=os.path.join(
                 scenario_directories[scenario], "demographic_data"
             ),
+        )
+
+        pop_full_path, _ = demog.get_pop(
+            E=20,
+            S=80,
+            min_age=0,
+            max_age=99,
+            infer_pop=True,
+            fert_rates=fert_rates_shift,
+            mort_rates=mort_rates_adjusted,
+            infmort_rates=infmort_rates_baseline_TP,
+            imm_rates=imm_rates_baseline_TP,
+            initial_pop=pop_baseline_TP[0, :],
+            pre_pop_dist=pre_pop_dist_baseline,
+            start_year=p.start_year,
+            end_year=2126,
+            download_path=None,
+        )
+        # save pop path to disk
+        np.savetxt(
+            os.path.join(
+                scenario_directories[scenario],
+                "demographic_data",
+                "population_distribution.csv",
+            ),
+            pop_full_path,
+            delimiter=",",
         )
         p.update_specifications(demog_vars_sim)
 
